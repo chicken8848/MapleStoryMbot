@@ -1,0 +1,2 @@
+# MapleStoryMbot
+Educational Bot
