@@ -2,6 +2,8 @@ import pyautogui as ag
 import random
 import time
 import cv2
+import keyboard
+from photoarchivelib import *
 
 MAX_RANDOM_TIME = 0.5
 CONFIDENCE_INTERVAL = 0.8
@@ -16,6 +18,8 @@ def presskey(key):
     ag.keyUp(key)
 
 def click(box):
+    if box == None:
+        return
     randompointx = box.left+random.random()*box.width
     randompointy = box.top+random.random()*box.height
     randomsleep()
@@ -23,10 +27,10 @@ def click(box):
 
 
 def locate(image):
-    return ag.locateOnScreen(image, confidence=CONFIDENCE_INTERVAL)
+    return ag.locateOnScreen(image, grayscale = False, confidence=CONFIDENCE_INTERVAL)
 
 def start():
-    input("Press any key to start...")
+    input("Enter any key to start...\n")
     print("Starting in 5")
     time.sleep(1)
     print("Starting in 4")
@@ -39,9 +43,31 @@ def start():
     time.sleep(1)
 
 def scan():
-    pass
-start()
-res = ag.locateOnScreen("photoarchive/newquest.png", confidence=0.8)
-print(res)
-if res != None:
-    ag.press("tab")
+    for photo in photolib:
+        location = locate(photo)
+        if location != None:
+            return photo
+    return None
+
+def dothething(photo):
+    if photo == None:
+        returna
+    if photo in clickable:
+        click(locate(photo))
+    elif photo in pressable.keys():
+        presskey(pressable[photo])
+    else:
+        pass
+
+def main():
+    start()
+    while keyboard.is_pressed('q') == False:
+        found = None
+        while found == None and keyboard.is_pressed('q') == False:
+            found = scan()
+        if keyboard.is_pressed('q') == True:
+            break
+        dothething(found)
+
+main()
+
