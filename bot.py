@@ -18,7 +18,7 @@ def presskey(key):
     ag.keyUp(key)
 
 def click(box):
-    if box == None:
+    if box is None:
         return
     randompointx = box.left+random.random()*box.width
     randompointy = box.top+random.random()*box.height
@@ -45,12 +45,12 @@ def start():
 def scan():
     for photo in photolib:
         location = locate(photo)
-        if location != None:
+        if location is not None:
             return photo
     return None
 
 def dothething(photo):
-    if photo == None:
+    if photo is None:
         return
     if photo in clickable:
         click(locate(photo))
@@ -62,11 +62,16 @@ def dothething(photo):
 
 def main():
     start()
-    while keyboard.is_pressed('q') == False:
+    start_time = time.time()
+    while keyboard.is_pressed('q') is False:
         found = None
-        while found == None and keyboard.is_pressed('q') == False:
+        while found is None and keyboard.is_pressed('q') is False:
             found = scan()
-        if keyboard.is_pressed('q') == True:
+            end_time = time.time()
+            elapsed_time = end_time - start_time
+            if elapsed_time > 300:
+                presskey("tab")
+        if keyboard.is_pressed('q') is True:
             break
         dothething(found)
 
