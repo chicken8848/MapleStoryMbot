@@ -1,2 +1,29 @@
 # MapleStoryMbot
-A bot to leave on to farm using pyautogui and cython
+Farming Maple with `pyautogui`
+## Requirements
+* `python==3.10`
+
+## Installation
+
+### Windows
+
+1. Clone Repo
+2. Open powershell in cloned repo
+3. run `./setupwindows.sh`
+4. run `. ./venv/Scripts/activate`
+5. run `python ./bot.py`
+
+### Linux
+
+1. Clone Repo
+2. Open bash in cloned repo
+3. run `bash setup.py`
+4. run `source venv/bin/activate`
+5. run `python bot.py`
+
+## What to do when it's running?
+
+1. Press Enter to start countdown
+2. Swap to emulator
+3. ???
+4. Profit
