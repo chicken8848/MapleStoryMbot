@@ -51,13 +51,14 @@ def scan():
 
 def dothething(photo):
     if photo == None:
-        returna
+        return
     if photo in clickable:
         click(locate(photo))
+    if photo in finished_quest:
+        time.sleep(2)
+        presskey('tab')
     elif photo in pressable.keys():
         presskey(pressable[photo])
-    else:
-        pass
 
 def main():
     start()
