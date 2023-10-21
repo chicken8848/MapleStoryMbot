@@ -9,17 +9,45 @@ Farming Maple with `pyautogui`
 
 1. Clone Repo
 2. Open powershell in cloned repo
-3. run `./setupwindows.sh`
-4. run `. ./venv/Scripts/activate`
-5. run `python ./bot.py`
+3. run 
+
+```sh
+./setupwindows.sh
+```
+
+4. run 
+
+```sh
+. ./venv/Scripts/activate
+```
+
+5. run 
+
+```sh
+python ./bot.py
+```
 
 ### Linux
 
 1. Clone Repo
 2. Open bash in cloned repo
-3. run `bash setup.py`
-4. run `source venv/bin/activate`
-5. run `python bot.py`
+3. run
+
+```sh
+bash setup.py
+```
+
+4. run
+
+```sh
+source venv/bin/activate
+```
+
+5. run
+
+```sh
+python bot.py
+```
 
 ## What to do when it's running?
 
