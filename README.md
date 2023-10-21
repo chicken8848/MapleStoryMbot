@@ -55,3 +55,7 @@ python bot.py
 2. Swap to emulator
 3. ???
 4. Profit
+
+## Note
+
+I'm using 'tab' to activate the auto-quest for bluestacks, change it to whatever suits your needs.
