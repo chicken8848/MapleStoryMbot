@@ -62,15 +62,16 @@ def dothething(photo):
 
 def main():
     start()
-    start_time = time.time()
     while keyboard.is_pressed('q') is False:
         found = None
+        start_time = time.time()
         while found is None and keyboard.is_pressed('q') is False:
             found = scan()
             end_time = time.time()
             elapsed_time = end_time - start_time
             if elapsed_time > 300:
                 presskey("tab")
+                start_time = time.time()
         if keyboard.is_pressed('q') is True:
             break
         dothething(found)
