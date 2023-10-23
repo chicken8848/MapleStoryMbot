@@ -31,10 +31,6 @@ def locate(image):
 
 def start():
     input("Enter any key to start...\n")
-    print("Starting in 5")
-    time.sleep(1)
-    print("Starting in 4")
-    time.sleep(1)
     print("Starting in 3")
     time.sleep(1)
     print("Starting in 2")
