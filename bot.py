@@ -6,7 +6,7 @@ import keyboard
 from photoarchivelib import *
 
 MAX_RANDOM_TIME = 0.5
-CONFIDENCE_INTERVAL = 0.8
+CONFIDENCE_INTERVAL = 0.75
 
 def randomsleep():
     time.sleep(MAX_RANDOM_TIME*random.random())
@@ -57,8 +57,8 @@ def dothething(photo):
     if photo in finished_quest:
         time.sleep(2)
         presskey('tab')
-    elif photo in pressable.keys():
-        presskey(pressable[photo])
+    #elif photo in pressable.keys():
+        #presskey(pressable[photo])
 
 def main():
     start()
