@@ -71,6 +71,7 @@ def main():
                 time.sleep(1)
                 presskey("tab")
                 start_time = time.time()
+            time.sleep(0.5)
         if keyboard.is_pressed('q') is True:
             break
         dothething(found)
