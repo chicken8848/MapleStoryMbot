@@ -72,6 +72,8 @@ def main():
             print(elapsed_time)
             if elapsed_time > 600:
                 presskey("tab")
+                time.sleep(1)
+                presskey("tab")
                 start_time = time.time()
         if keyboard.is_pressed('q') is True:
             break
