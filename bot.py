@@ -75,6 +75,7 @@ def main():
         if keyboard.is_pressed('q') is True:
             break
         dothething(found)
+        time.sleep(0.2)
 
 main()
 
