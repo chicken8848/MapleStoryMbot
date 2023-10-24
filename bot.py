@@ -8,8 +8,10 @@ from photoarchivelib import *
 MAX_RANDOM_TIME = 0.5
 CONFIDENCE_INTERVAL = 0.75
 
+
 def randomsleep():
     time.sleep(MAX_RANDOM_TIME*random.random())
+
 
 def presskey(key):
     randomsleep()
@@ -17,7 +19,9 @@ def presskey(key):
     randomsleep()
     ag.keyUp(key)
 
+
 def click(box):
+
     if box is None:
         return
     randompointx = box.left+random.random()*box.width
@@ -25,9 +29,9 @@ def click(box):
     randomsleep()
     ag.click(randompointx, randompointy)
 
-
 def locate(image):
     return ag.locateOnScreen(image, grayscale = False, confidence=CONFIDENCE_INTERVAL)
+
 
 def start():
     input("Enter any key to start...\n")
@@ -44,6 +48,7 @@ def scan():
         if location is not None:
             return photo
     return None
+
 
 def dothething(photo):
     if photo is None:
