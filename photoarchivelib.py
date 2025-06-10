@@ -1,4 +1,6 @@
-photolib = ["photoarchive/autoassign.png",
+import numpy as np
+
+photolib = np.array(["photoarchive/autoassign.png",
             "photoarchive/accepttext.png",
             "photoarchive/claimreward.png",
             "photoarchive/complete.png",
@@ -8,9 +10,10 @@ photolib = ["photoarchive/autoassign.png",
             "photoarchive/xhotnew.png",
             "photoarchive/golater.png",
             "photoarchive/gotocontent.png",
-            "photoarchive/equip.png"]
+            "photoarchive/equip.png",
+            "photoarchive/availabletostart.png"])
 
-clickable = ["photoarchive/autoassign.png",
+clickable = np.array(["photoarchive/autoassign.png",
             "photoarchive/accepttext.png",
             "photoarchive/claimreward.png",
             "photoarchive/complete.png",
@@ -19,8 +22,9 @@ clickable = ["photoarchive/autoassign.png",
             "photoarchive/xhotnew.png",
             "photoarchive/golater.png",
             "photoarchive/gotocontent.png",
-            "photoarchive/equip.png"]
+            "photoarchive/equip.png",
+            "photoarchive/availabletostart.png"])
 
-pressable = {"photoarchive/newquest3.png": "tab"}
+#pressable = np.array({"photoarchive/newquest3.png": "tab"})
 
-finished_quest = ["photoarchive/claimreward.png"]
+finished_quest = np.array(["photoarchive/claimreward.png"])

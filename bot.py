@@ -6,10 +6,12 @@ import keyboard
 from photoarchivelib import *
 
 MAX_RANDOM_TIME = 0.5
-CONFIDENCE_INTERVAL = 0.8
+CONFIDENCE_INTERVAL = 0.75
+
 
 def randomsleep():
     time.sleep(MAX_RANDOM_TIME*random.random())
+
 
 def presskey(key):
     randomsleep()
@@ -17,7 +19,9 @@ def presskey(key):
     randomsleep()
     ag.keyUp(key)
 
+
 def click(box):
+
     if box is None:
         return
     randompointx = box.left+random.random()*box.width
@@ -25,16 +29,12 @@ def click(box):
     randomsleep()
     ag.click(randompointx, randompointy)
 
-
 def locate(image):
     return ag.locateOnScreen(image, grayscale = False, confidence=CONFIDENCE_INTERVAL)
 
+
 def start():
     input("Enter any key to start...\n")
-    print("Starting in 5")
-    time.sleep(1)
-    print("Starting in 4")
-    time.sleep(1)
     print("Starting in 3")
     time.sleep(1)
     print("Starting in 2")
@@ -49,6 +49,7 @@ def scan():
             return photo
     return None
 
+
 def dothething(photo):
     if photo is None:
         return
@@ -57,8 +58,8 @@ def dothething(photo):
     if photo in finished_quest:
         time.sleep(2)
         presskey('tab')
-    elif photo in pressable.keys():
-        presskey(pressable[photo])
+    #elif photo in pressable.keys():
+        #presskey(pressable[photo])
 
 def main():
     start()
@@ -72,10 +73,14 @@ def main():
             print(elapsed_time)
             if elapsed_time > 600:
                 presskey("tab")
+                time.sleep(1)
+                presskey("tab")
                 start_time = time.time()
+            time.sleep(1)
         if keyboard.is_pressed('q') is True:
             break
         dothething(found)
+        time.sleep(0.2)
 
 main()
 
